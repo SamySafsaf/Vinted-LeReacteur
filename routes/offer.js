@@ -49,8 +49,9 @@ router.post("/offers/publish", isAuthenticated, async (req, res) => {
                 message: "Price must be 100 000 at maximum",
             });
         }
-    } catch (error) {}
-    res.status(401).json({ error: error.message });
+    } catch (error) {
+        res.status(401).json({ error: error.message });
+    }
 });
 
 router.put("/offers/update/:id", isAuthenticated, async (req, res) => {
